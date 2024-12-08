@@ -1,0 +1,1 @@
+{"name":"Local: Q1","url":"d:\\Coding\\C++\\DSA\\01_AB_CodeChef\\Starters162\\Q1.cpp","tests":[{"id":1732717924077,"input":"4\n1\n67\n2\n53 32\n3\n0 0 0\n2\n100 100","output":"33\n65\n-1\n0"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Coding\\C++\\DSA\\01_AB_CodeChef\\Starters162\\Q1.cpp","group":"local","local":true}

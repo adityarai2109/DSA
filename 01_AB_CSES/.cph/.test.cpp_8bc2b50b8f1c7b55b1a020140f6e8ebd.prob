@@ -1,0 +1,1 @@
+{"name":"Local: test","url":"d:\\C++\\DSA\\01_AB_CSES\\test.cpp","tests":[{"id":1668266957207,"input":"n\n0 1\n1 2\n1 3\n3 4\n3\n-2 4 2 -4 6","output":"6"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\C++\\DSA\\01_AB_CSES\\test.cpp","group":"local","local":true}
