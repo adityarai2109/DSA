@@ -7,7 +7,7 @@ class Solution
 public:
     int orangesRotting(vector<vector<int>> &grid)
     {
-        int n = grid.size(), m = grid[0].size(), t = 0, f = 0;
+        int n = grid.size(), m = grid[0].size(), t = 0, fresh = 0;
         queue<pair<int, int>> q;
 
         for (int i = 0; i < n; i++)
@@ -15,10 +15,10 @@ public:
                 if (grid[i][j] == 2)
                     q.push(make_pair(i, j));
                 else if (grid[i][j] == 1)
-                    f++;
+                    fresh++;
 
         // early exit
-        if (f == 0)
+        if (fresh == 0)
             return 0;
 
         while (!q.empty())
@@ -38,7 +38,7 @@ public:
                     {
                         grid[x][y] = 2;
                         q.push(make_pair(x, y));
-                        f--;
+                        fresh--;
                         rotted = true;
                     }
                 }
@@ -48,7 +48,7 @@ public:
                 t++;
         }
 
-        return f == 0 ? t : -1;
+        return fresh == 0 ? t : -1;
     }
 };
 

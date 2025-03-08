@@ -10,8 +10,7 @@ class stack
 public:
     void push(int data)
     {
-        
-    }
+        }
     void pop()
     {
     }

@@ -38,7 +38,7 @@ vector<int> selectionsort(vector<int> &v)
 {
     for (int i = 0; i < v.size() - 1; i++)
     {
-        int cur = v[i], min_pos = i;
+        int min_pos = i;
         for (int j = i; j < v.size(); j++)
             if (v[j] < v[min_pos])
                 min_pos = j;

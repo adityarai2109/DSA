@@ -7,7 +7,7 @@ bool odd(int x)
 int getIthBit(int n, int i)
 {
     int mask = (1 << i);
-    return (n & mask) > 0 ? 1 : 0;
+    return (n & mask) > 0;
 }
 int clearIthBit(int &n, int i)
 {
