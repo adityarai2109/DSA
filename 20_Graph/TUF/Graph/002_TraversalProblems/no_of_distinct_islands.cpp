@@ -30,6 +30,7 @@ public:
             {
                 if (grid[i][j] == 1 and vis[i][j] == 0)
                 {
+                    // unique key by taking coordinates to origin i.e. {X - x, Y - y}
                     vector<vector<int>> cells;
                     dfs(grid, i, j, cells, vis, i, j);
                     s.insert(cells);

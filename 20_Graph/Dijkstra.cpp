@@ -27,6 +27,7 @@ void dijkstra(vector<vector<pair<int, int>>> &graph, int src)
     s.insert({0, src});
 
     while (!s.empty())
+
     {
         auto it = s.begin();
         int nodeDist = it->first;

@@ -1,70 +1,36 @@
 #include <bits/stdc++.h>
+using namespace std;
+#define max(a, b) ((a < b) ? b : a)
+#define min(a, b) ((a > b) ? b : a)
+#define mod 1e9 + 7
+#define INF 1000000000000000003
+typedef long long int ll;
+typedef vector<int> vi;
+typedef pair<int, int> pi;
 
 class Solution
 {
-
-    bool bfs(int src, vector<int> adj[], vector<bool> &vis)
-    {
-        queue<pair<int, int>> q;
-        q.push({src, -1});
-        vis[src] = true;
-        while (!q.empty())
-        {
-            int z = q.size();
-            while (z--)
-            {
-                auto c = q.front();
-                q.pop();
-                int x = c.first;
-                int parent = c.second;
-
-                for (auto nbr : adj[x])
-                {
-                    if (vis[nbr] == false)
-                    {
-                        vis[nbr] = true;
-                        q.push({nbr, x});
-                    }
-                    else if (nbr != parent)
-                        return true;
-                }
-            }
-        }
-        return false;
-    }
-
-    bool dfs(int src, vector<int> adj[], vector<bool> &vis, int parent = -1)
-    {
-        vis[src] = true;
-        for (auto nbr : adj[src])
-        {
-            if (vis[nbr] == false)
-            {
-                if (dfs(nbr, adj, vis, src))
-                    return true;
-            }
-            else if (nbr != parent)
-                return true;
-        }
-        return false;
-    }
-
 public:
+    bool dfs(int V, vector<int> adj[], vector<int> &vis)
+    {
+        
+    }
+
     bool isCycle(int V, vector<int> adj[])
     {
-        vector<bool> vis(V, false);
-        for (size_t i = 0; i < V; i++)
-        {
-            if (vis[i] == false and bfs(i, adj, vis))
-                return true;
-        }
+        vector<int> vis(V, 0);
+        if (dfs(V, adj, vis))
+            return true;
         return false;
     }
 };
 
 int main()
 {
-    FAST_IO;
-
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+    vector<int> adj[] = {{1, 2}, {0}, {0, 3}, {2}};
+    Solution S;
+    cout << S.isCycle(adj->size(), adj);
     return 0;
 }
